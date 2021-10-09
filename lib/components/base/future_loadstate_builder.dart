@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: iamsmiling
  * @Date: 2021-09-18 14:34:27
- * @LastEditTime: 2021-10-09 12:40:21
+ * @LastEditTime: 2021-10-09 13:31:59
  */
 import 'package:flustars/flustars.dart';
 import 'package:flutter/cupertino.dart';
@@ -38,7 +38,6 @@ abstract class BaseFutureLoadStateController<T> extends GetxController
   }
 
   Future<T> _loadData({Map? params}) {
-    hasError.value = false;
     return loadData(params: params).then((value) {
       if (value is Iterable && value.isEmpty) {
         change(value, status: RxStatus.empty());
